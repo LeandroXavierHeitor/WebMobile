@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebMacks</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <h2>Seja bem-vindo ao WebMacks</h2>
+
+      <img class="logo" src="./LogoWebMacks.png" alt="Logo" />
+
+      <p>Preencha os campos abaixo para acessar nossos serviços!</p>
+
+      <form>
+        <div class="input-block">
+          <label for="name">Nome</label>
+          <input id="name" type="text" placeholder="Nome" />
+        </div>
+
+        <div class="input-block">
+          <label for="password">Senha</label>
+          <input id="password" type="password" placeholder="Senha" />
+        </div>
+
+        <div class="form-footer">
+          <label for="remember">Lembrar usuário</label>
+          <input id="remember" type="checkbox" />
+        </div>
+
+        <button type="submit" onclick="onSubmit(e)">Enviar</button>
+      </form>
+    </main>
+
+    <script>
+      function onSubmit(e) {
+        e.preventDefault();
+      }
+    </script>
+  </body>
+</html>
