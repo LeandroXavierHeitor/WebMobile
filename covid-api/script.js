@@ -1,4 +1,4 @@
-function getJSON(url, callback) {
+const getJSON = (url, callback) => {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', url, true);
   xhr.responseType = 'json';
@@ -8,14 +8,11 @@ function getJSON(url, callback) {
 
       callback(xhr.response);
     } else {
-      console.log('error', xhr.status);
+      return alert('Houve um erro ao carregar seus dados!');
     }
   };
   xhr.send();
-}
-
-const url =
-  'https://api.covid19api.com/live/country/brazil?from=2022-01-01T00:00:00Z&to=2022-02-02T00:00:00Z';
+};
 
 const html = (Province, Deaths, Country, Date) => `
   <div class="card">
@@ -27,6 +24,9 @@ const html = (Province, Deaths, Country, Date) => `
 
 const content = document.getElementById('content');
 
+const url =
+  'https://api.covid19api.com/live/country/brazil?from=2022-01-01T00:00:00Z&to=2022-02-02T00:00:00Z';
+
 getJSON(url, (data) => {
   if (data instanceof Error) {
     return alert('Houve um erro ao carregar seus dados!');
@@ -36,6 +36,5 @@ getJSON(url, (data) => {
     html(item.Province, item.Deaths, item.Country, item.Date)
   );
 
-  console.log(obj.join().replace(/,/g, ''));
   content.innerHTML = obj.join().replace(/,/g, '');
 });
