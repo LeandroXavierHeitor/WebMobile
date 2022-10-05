@@ -16,6 +16,7 @@ const getJSON = (url, callback) => {
 
 const html = (Province, Deaths, Country, Date) => `
   <div class="card">
+    <img src="https://www.sicamous.ca/public/uploads/images/web_thumbnail1/1585854946-950w_web_thumbnail1.jpg" alt="Card Corona Virus"/>
     <h3 class="title">${Province} - ${Country}</h3>
     <span>Total de mortes: ${Deaths}</span>
     <p>${Date.split('T')[0].split('-').reverse().join('/')}</p>
